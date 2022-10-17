@@ -89,6 +89,7 @@ input.onButtonPressed(Button.B, function () {
 })
 let item = 0
 radio.setGroup(1)
+item = 1
 basic.forever(function () {
     if (item == 1) {
         basic.showString("A")
@@ -167,5 +168,13 @@ basic.forever(function () {
     }
     if (item == 26) {
         basic.showString("Z")
+    }
+})
+basic.forever(function () {
+    if (item == 0) {
+        item = 26
+    }
+    if (item == 27) {
+        item = 1
     }
 })
