@@ -69,6 +69,7 @@ input.on_button_pressed(Button.B, on_button_pressed_b)
 
 item = 0
 radio.set_group(1)
+item = 1
 
 def on_forever():
     if item == 1:
@@ -126,9 +127,9 @@ def on_forever():
 basic.forever(on_forever)
 
 def on_forever2():
-    pass
+    global item
+    if item == 0:
+        item = 26
+    if item == 27:
+        item = 1
 basic.forever(on_forever2)
-
-def on_forever3():
-    pass
-basic.forever(on_forever3)
