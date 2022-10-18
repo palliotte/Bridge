@@ -1,5 +1,5 @@
 radio.onReceivedNumber(function (receivedNumber) {
-	
+    serial.writeLine("" + (list[receivedNumber]))
 })
 input.onButtonPressed(Button.A, function () {
     item = item - 1
@@ -10,6 +10,7 @@ input.onButtonPressed(Button.AB, function () {
 input.onButtonPressed(Button.B, function () {
     item = item + 1
 })
+let list: number[] = []
 let item = 0
 radio.setGroup(2345)
 item = 1
@@ -50,5 +51,5 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-	
+    basic.showString("" + (list[item]))
 })
