@@ -1,5 +1,5 @@
 radio.onReceivedNumber(function (receivedNumber) {
-    serial.writeLine("" + (list[receivedNumber]))
+    serial.writeLine("" + (text_list[receivedNumber]))
 })
 input.onButtonPressed(Button.A, function () {
     item = item - 1
@@ -10,46 +10,46 @@ input.onButtonPressed(Button.AB, function () {
 input.onButtonPressed(Button.B, function () {
     item = item + 1
 })
-let list: number[] = []
+let text_list: string[] = []
 let item = 0
 radio.setGroup(2345)
-item = 1
-let text_list = [
-"a",
-"b",
-"c",
-"d",
-"e",
-"f",
-"g",
-"h",
-"i",
-"j",
-"k",
-"l",
-"m",
-"n",
-"o",
-"p",
-"q",
-"r",
-"s",
-"t",
-"u",
-"v",
-"w",
-"x",
-"y",
-"z"
+item = 0
+text_list = [
+"A",
+"B",
+"C",
+"D",
+"E",
+"F",
+"G",
+"H",
+"I",
+"J",
+"K",
+"L",
+"M",
+"N",
+"O",
+"P",
+"Q",
+"R",
+"S",
+"T",
+"U",
+"V",
+"W",
+"X",
+"Y",
+"Z"
 ]
 basic.forever(function () {
-    if (item == 0) {
-        item = 26
+    if (item == -1) {
+        item = 25
     }
-    if (item == 27) {
-        item = 1
+    if (item == 26) {
+        item = 0
     }
 })
 basic.forever(function () {
-    basic.showString("" + (list[item]))
+    basic.showString("" + (text_list[item]))
 })
